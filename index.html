@@ -41,9 +41,16 @@
     const puzzle = document.querySelector('#puzzle-container');
 
     puzzle.innerHTML = '';
+    puzzle.insertAdjacentHTML('beforeend', '<div class="line" data-line-number="1"></div>');
+    puzzle.insertAdjacentHTML('beforeend', '<div class="line" data-line-number="2"></div>');
+    puzzle.insertAdjacentHTML('beforeend', '<div class="line" data-line-number="3"></div>');
+    puzzle.insertAdjacentHTML('beforeend', '<div class="line" data-line-number="4"></div>');
 
+    let counter = 0;
     shuffle(pieces).forEach((piece) => {
-      puzzle.insertAdjacentHTML('beforeend', piece.outerHTML);
+      let lineNumber = Math.floor(1 + counter);
+      puzzle.querySelector(`[data-line-number="${lineNumber}"]`).insertAdjacentHTML('beforeend', piece.outerHTML);
+      counter += 0.25;
     });
   </script>
   <script src="build/application.js"></script>

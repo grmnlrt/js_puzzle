@@ -7,10 +7,13 @@ body {
 
 #puzzle-container {
   width: 428px;
-  flex-wrap: wrap;
-  display: flex;
   border: 10px solid black;
   background: black;
+}
+
+.line {
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .piece {
